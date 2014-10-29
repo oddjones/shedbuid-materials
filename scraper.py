@@ -3,6 +3,7 @@
 
 import scraperwiki
 import lxml.html
+from array import *
 #
 # # Read in a page
 # kingspan
@@ -17,7 +18,7 @@ class Product:
 #
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
-kingspan =[]
+kingspan = []
 x=0
 for el in root.cssselect("div#property_table_109 table tr"):
     print lxml.html.tostring(el)
