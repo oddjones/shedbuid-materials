@@ -8,7 +8,7 @@ import lxml.html
 # kingspan
 html = scraperwiki.scrape("http://www.buildingmaterials.co.uk/kingspan-insulation-boards-tp10-2400mm-x-1200mm.html")
 class Product:
-    def__init__(self, name, qty, url, ID, price):
+    def __init__(self, name, qty, url, ID, price):
         self.name = name
         self.qty = qty
         self.url = url
