@@ -7,12 +7,22 @@ import lxml.html
 # # Read in a page
 # kingspan
 html = scraperwiki.scrape("http://www.buildingmaterials.co.uk/kingspan-insulation-boards-tp10-2400mm-x-1200mm.html")
-
+class Product:
+    def__init__(self, name, qty, url, ID, price):
+        self.name = name
+        self.qty = qty
+        self.url = url
+        self.ID = ID
+        self.price = price
 #
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
-for el in root.cssselect("tr#option_item_442"):
+    el = root.cssselect("tr#option_item_439"):
+    #kingspan50 = Product('')
     print lxml.html.tostring(el)
+    print el[0]
+    print el[1]
+    print el[2]
 #
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
