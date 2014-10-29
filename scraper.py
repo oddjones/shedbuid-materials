@@ -21,12 +21,11 @@ kingspan =[]
 x=0
 for el in root.cssselect("div#property_table_109 table tr"):
     print lxml.html.tostring(el)
-    #kingspan.append Product("Kingspan50",1,"buildingmaterials.co.uk",el.cssselect("td")[2].text,el.cssselect("td")[3].text)
-    print x
-    print el.cssselect("td")[0].text
+    if x> 0:
+        kingspan.append Product(el.cssselect("td")[0],1,"buildingmaterials.co.uk",el.cssselect("td")[2].text,el.cssselect("td")[3].text)
     x=x+1
 
-
+print kingspan
 #
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
