@@ -12,7 +12,7 @@ html = scraperwiki.scrape("http://www.buildingmaterials.co.uk/kingspan-insulatio
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
 for el in root.cssselect("tr#option_item_442"):
-    print el
+    print lxml.html.tostring(el)
 #
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
