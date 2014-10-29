@@ -17,12 +17,11 @@ class Product:
 #
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
-for el in root.cssselect("tr#option_item_439"):
-    kingspan50 = Product("Kingspan50",1,"buildingmaterials.co.uk",el.cssselect("td")[2].text,el.cssselect("td")[3].text)
-    print kingspan50.name
-    print kingspan50.url
-    print kingspan50.ID
-    print kingspan50.price
+kingspan =[]
+for el in root.cssselect("div#property_table_109 table tbody"):
+    #kingspan.append Product("Kingspan50",1,"buildingmaterials.co.uk",el.cssselect("td")[2].text,el.cssselect("td")[3].text)
+    print el.cssselect("td")[0].text
+
 
 #
 # # Write out to the sqlite database using scraperwiki library
