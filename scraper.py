@@ -21,7 +21,7 @@ root = lxml.html.fromstring(html)
 kingspan = []
 x=0
 for el in root.cssselect("div#property_table_109 table tr"):
-    #print lxml.html.tostring(el)
+    print lxml.html.tostring(el)
     if x> 0:
         print el.cssselect("td")[0].text
         print el.cssselect("td")[2].text
