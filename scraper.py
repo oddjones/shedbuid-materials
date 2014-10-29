@@ -23,10 +23,10 @@ x=0
 for el in root.cssselect("div#property_table_109 table tr"):
     #print lxml.html.tostring(el)
     if x> 0:
-        print el.cssselect("td")[0]
+        print el.cssselect("td")[0].text
         print el.cssselect("td")[2].text
         print el.cssselect("td")[3].text
-        kingspan.append(el.cssselect("td")[0].text+"|1|buildingmaterials.co.uk|"+el.cssselect("td")[2].text+"|"+el.cssselect("td")[3].text)
+        #kingspan.append(el.cssselect("td")[0].text+"|1|buildingmaterials.co.uk|"+el.cssselect("td")[2].text+"|"+el.cssselect("td")[3].text)
     x=x+1
 
 print kingspan
