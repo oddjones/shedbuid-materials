@@ -17,12 +17,12 @@ class Product:
 #
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
-    el = root.cssselect("tr#option_item_439"):
-    #kingspan50 = Product('')
-    print lxml.html.tostring(el)
-    print el[0]
-    print el[1]
-    print el[2]
+el = root.cssselect("tr#option_item_439"):
+#kingspan50 = Product('')
+print lxml.html.tostring(el)
+print el[0]
+print el[1]
+print el[2]
 #
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
