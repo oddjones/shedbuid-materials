@@ -17,7 +17,7 @@ class Product:
 #
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
-el = root.cssselect("tr#option_item_439"):
+el = root.cssselect("tr#option_item_439")
 #kingspan50 = Product('')
 print lxml.html.tostring(el)
 print el[0]
