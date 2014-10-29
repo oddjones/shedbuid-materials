@@ -18,9 +18,12 @@ class Product:
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
 kingspan =[]
+x=0
 for el in root.cssselect("div#property_table_109 table tbody"):
     #kingspan.append Product("Kingspan50",1,"buildingmaterials.co.uk",el.cssselect("td")[2].text,el.cssselect("td")[3].text)
+    print x
     print el.cssselect("td")[0].text
+    x++
 
 
 #
