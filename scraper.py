@@ -21,11 +21,11 @@ if table_div:
 	ks_table = table_div.find("table")
 	#print ks_table
 	
-	rows = ks_table.findall("tr")
-	#for row in rows:
-		#record={}
-		#table_cells = row.findall("td")
-		#if table_cells:
-			#record['id'] = table_cells[1].string
-			#record['name'] = table_cells[0].string
-			#record['price'] = table_cells[2].find("span").string
+	rows = ks_table.finAall("tr")
+	for row in rows:
+		record={}
+		table_cells = row.findall("td")
+		if table_cells:
+			record['id'] = table_cells[1].string
+			record['name'] = table_cells[0].string
+			record['price'] = table_cells[2].find("span").string
