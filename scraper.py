@@ -26,7 +26,7 @@ for el in root.cssselect("div#property_table_109 table tr"):
         print el.cssselect("td")[0].text
         print el.getchildren()[0].text
         print el.getchildren()[1].text
-        print el.getchildren()[2].text
+        print el.getchildren()[2].getchildren()[0].text
         #print el.cssselect("td")[3].text
         #kingspan.append(el.cssselect("td")[0].text+"|1|buildingmaterials.co.uk|"+el.cssselect("td")[2].text+"|"+el.cssselect("td")[3].text)
     x=x+1
