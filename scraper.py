@@ -1,45 +1,19 @@
-# This is a template for a Python scraper on Morph (https://morph.io)
-# including some code snippets below that you should find helpful
-
+import string
 import scraperwiki
-import lxml.html
-from array import *
-#
-# # Read in a page
-# kingspan
-html = scraperwiki.scrape("http://www.buildingmaterials.co.uk/kingspan-insulation-boards-tp10-2400mm-x-1200mm.html")
-class Product:
-    def __init__(self, name, qty, url, ID, price):
-        self.name = name
-        self.qty = qty
-        self.url = url
-        self.ID = ID
-        self.price = price
-#
-# # Find something on the page using css selectors
-root = lxml.html.fromstring(html)
-kingspan = []
-x=0
-for el in root.cssselect("div#property_table_109 table tr"):
-    print lxml.html.tostring(el)
-    if x> 0:
-        print el.cssselect("td")[0].text
-        print el.getchildren()[0].text
-        print el.getchildren()[1].text
-        print lxml.html.tostring(el.getchildren()[2].getchildren()[0].text)
-        #print el.cssselect("td")[3].text
-        #kingspan.append(el.cssselect("td")[0].text+"|1|buildingmaterials.co.uk|"+el.cssselect("td")[2].text+"|"+el.cssselect("td")[3].text)
-    x=x+1
+import mechanize
 
-print kingspan
-#
-# # Write out to the sqlite database using scraperwiki library
-# scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
-#
-# # An arbitrary query against the database
-# scraperwiki.sql.select("* from data where 'name'='peter'")
+from BeautifulSoup import BeautifulSoup
 
-# You don't have to do things with the ScraperWiki and lxml libraries. You can use whatever libraries are installed
-# on Morph for Python (https://github.com/openaustralia/morph-docker-python/blob/master/pip_requirements.txt) and all that matters
-# is that your final data is written to an Sqlite database called data.sqlite in the current working directory which
-# has at least a table called data.
+# The job of this scraper is to go away and find the prices of all the components for the SHËD 
+# garden office from those suppliers I know supply them
+
+starting_url = 'http://www.buildingmaterials.co.uk/kingspan-insulation-boards-tp10-2400mm-x-1200mm.html' 
+
+#start using mechanize to simulate a browser ('br')
+br = mechanize.Browser()
+br.set_debug_responses(True)
+# Set the user-agent as Mozilla - if the page knows we're Mechanize, it won't return all fields
+br.addheaders = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
+#open the URL previously defined as 'starting_url'
+br.open(starting_url)
+soup = BeautifulSoup(br.read())
