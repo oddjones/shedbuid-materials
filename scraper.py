@@ -20,7 +20,7 @@ table_div = soup.find("div",{"id" : "property_table_109"})
 if table_div:
 	ks_table = table_div.find("table")
 	if ks_table:
-		rows = ks_table.findAall("tr")
+		rows = ks_table.findAll("tr")
 		for row in rows:
 			record={}
 			table_cells = row.findAll("td")
