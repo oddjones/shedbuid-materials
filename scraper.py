@@ -21,10 +21,10 @@ if table_div:
 	ks_table = table_div.find("table")
 	#print ks_table
 	
-	rows = ks_table.finAall("tr")
+	rows = ks_table.findAall("tr")
 	for row in rows:
 		record={}
-		table_cells = row.findall("td")
+		table_cells = row.findAll("td")
 		if table_cells:
 			record['id'] = table_cells[1].string
 			record['name'] = table_cells[0].string
