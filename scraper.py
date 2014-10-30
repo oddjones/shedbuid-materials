@@ -16,5 +16,14 @@ br.addheaders = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.
 #open the URL previously defined as 'starting_url'
 br.open(starting_url)
 soup = BeautifulSoup(br.response().read())
-ks_table = soup.find("div",{"id" : "property_table_109"})
-print (ks_table)
+table_div = soup.find("div",{"id" : "property_table_109"})
+if table_div:
+	ks_table = table_div.find("table")
+	rows = ks_table.findall("tr")
+	for row in rows:
+		record={}
+		table_cells = row.findall("td")
+		if table_cells:
+			record['id'] = table_cells[1].string
+			record['name'] = table_cells[0].string
+			record['price'] = table_cells[2].find("span").string
