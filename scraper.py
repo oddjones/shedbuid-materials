@@ -19,7 +19,7 @@ soup = BeautifulSoup(br.response().read())
 table_div = soup.find("div",{"id" : "property_table_109"})
 if table_div:
 	ks_table = table_div.find("table")
-	print ks_table
+	#print ks_table
 	
 	rows = ks_table.findall("tr")
 	#for row in rows:
