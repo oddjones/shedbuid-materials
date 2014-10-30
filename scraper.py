@@ -21,7 +21,7 @@ if table_div:
 	ks_table = table_div.find("table")
 	print ks_table
 	
-	#rows = ks_table.findall("tr")
+	rows = ks_table.findall("tr")
 	#for row in rows:
 		#record={}
 		#table_cells = row.findall("td")
