@@ -4,7 +4,7 @@ import mechanize
 
 from BeautifulSoup import BeautifulSoup
 
-#The job of this scraper is to go away and find the prices of all the components for the SHËD 
+# The job of this scraper is to go away and find the prices of all the components for the SHED 
 #garden office from those suppliers I know supply them
 
 starting_url = 'http://www.buildingmaterials.co.uk/kingspan-insulation-boards-tp10-2400mm-x-1200mm.html' 
