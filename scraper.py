@@ -28,4 +28,4 @@ if table_div:
 				record['id'] = table_cells[1].string
 				record['name'] = table_cells[0].string
 				record['price'] = table_cells[2].find("span").string
-	print record
+				print record
